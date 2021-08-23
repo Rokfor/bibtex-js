@@ -81,7 +81,7 @@ export class BibFilePresenter {
 
         const entryMap: { [k: string]: BibEntry } = {};
         this.entries_raw.forEach((entry: BibEntry) => {
-            const key = entry._id.toLowerCase();
+            const key = entry._id;
             /**
              * BibTEX will complain if two entries have the same internal key, even if they aren’t capitalized in the same
              * way. For instance, you cannot have two entries named Example and example.
@@ -95,7 +95,7 @@ export class BibFilePresenter {
     }
 
     getEntry(id: string): BibEntry | undefined {
-        return this.entries$[id.toLowerCase()];
+        return this.entries$[id];
     }
 }
 

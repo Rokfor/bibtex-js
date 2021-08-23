@@ -33,4 +33,4 @@ export declare function hasOptionalFields(s: any): s is (keyof typeof optionalFi
 export declare function hasMandatoryFields(s: any): s is (keyof typeof mandatoryFields);
 export declare function getMandatoryFields(s: string): MandatoryFields[];
 export declare function getOptionalFields(s: string): OptionalFields[];
-export declare const findError: (entry: BibEntry, field: "number" | "author" | "type" | "title" | "address" | "booktitle" | "chapter" | "edition" | "editor" | "howpublished" | "institution" | "journal" | "month" | "note" | "organization" | "pages" | "publisher" | "school" | "series" | "volume" | "year" | KnownField[]) => Error | undefined;
+export declare const findError: (entry: BibEntry, field: "number" | "type" | "author" | "title" | "address" | "booktitle" | "chapter" | "edition" | "editor" | "howpublished" | "institution" | "journal" | "month" | "note" | "organization" | "pages" | "publisher" | "school" | "series" | "volume" | "year" | KnownField[]) => Error | undefined;

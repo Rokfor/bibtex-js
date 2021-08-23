@@ -55,7 +55,7 @@ export class BibEntry {
     }
 
     getField(key: string): FieldValue | undefined {
-        return this.fields[key.toLowerCase()];
+        return this.fields[key];
     }
 
     getFieldAsString(key: string): string | number| undefined {

@@ -48,7 +48,7 @@ var comma               = {literal: "," }
 
 function addToObj(obj, keyval){
   if(keyval.type !== "keyval") throw new Error("Expected a keyval object");
-  var key = keyval.key.toLowerCase();
+  var key = keyval.key;
       if(obj.fields[key]) {
       console.log("WARNING: field "+key+ " was already defined on object "+obj._id+". Ignoring this value.");
       return;
@@ -213,7 +213,7 @@ non_quote_non_brace  -> (%tok_id |
 #
 # Case-independent sequence of non-whitespace, non-brace, non-commas
 #
-key_string         -> stringreftoken:+ {% function (data, location, reject) { return joinTokens(data[0]).toLowerCase(); } %}
+key_string         -> stringreftoken:+ {% function (data, location, reject) { return joinTokens(data[0]); } %}
 
 #
 # • Values (i.e. right hand sides of each assignment) can be either between curly braces or between

@@ -117,7 +117,7 @@ export default class Lexer {
     private eatSpecialChars(startAt: string): string | TypedToken {
         this.pos++;
         if (startAt === "@") {
-            const type = this.getStringUntilNonEscapedChar("{").trim().toLowerCase();
+            const type = this.getStringUntilNonEscapedChar("{").trim();
             if (isBibType(type))
                 return newToken(bibTypes[type], type);
             else
