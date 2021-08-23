@@ -49,7 +49,7 @@ const comma: any = {literal: ","};
 
 function addToObj(obj, keyval) {
     if (keyval.type !== "keyval") throw new Error("Expected a keyval object");
-    const key = keyval.key.toLowerCase();
+    const key = keyval.key;
     if (obj.fields[key]) {
         // TODO error?
         // console.log("WARNING: field '" + key + "' was already defined on " + obj["@type"] + " object with id '" + obj._id + "'. Ignoring this value.");
@@ -384,7 +384,7 @@ export const grammar: any = {
         },
         {
             "name": "key_string", "symbols": ["key_string$ebnf$1"], "postprocess": function (data) {
-            return joinTokens(data[0]).toLowerCase();
+            return joinTokens(data[0]);
         }
         },
         {"name": "value_string$subexpression$1$ebnf$1", "symbols": []},
